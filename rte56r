@@ -1,0 +1,102 @@
+--[=[
+ d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
+88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
+88      88    88    88            odD'      88      88    88 88ooo88 
+88  ooo 88    88    88          .88'        88      88    88 88~~~88 
+88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88 
+ Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER
+]=]
+
+-- Instances: 7 | Scripts: 2 | Modules: 0
+local G2L = {};
+
+-- Workspace.ScreenGui
+G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+
+-- Workspace.ScreenGui.OpenManager
+G2L["2"] = Instance.new("Frame", G2L["1"]);
+G2L["2"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2"]["Size"] = UDim2.new(0, 381, 0, 171);
+G2L["2"]["BorderColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2"]["Position"] = UDim2.new(0.335751473903656, 0, 0.3532608449459076, 0);
+G2L["2"]["Name"] = [[OpenManager]];
+
+-- Workspace.ScreenGui.OpenManager.TextButton
+G2L["3"] = Instance.new("TextButton", G2L["2"]);
+G2L["3"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3"]["TextSize"] = 14;
+G2L["3"]["FontFace"] = Font.new([[rbxasset://fonts/families/LuckiestGuy.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["3"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["3"]["Size"] = UDim2.new(0, 46, 0, 30);
+G2L["3"]["BorderColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["3"]["Text"] = [[X]];
+G2L["3"]["Position"] = UDim2.new(0.8818897604942322, 0, 0, 0);
+
+-- Workspace.ScreenGui.OpenManager.TextButton.LocalScript
+G2L["4"] = Instance.new("LocalScript", G2L["3"]);
+
+
+-- Workspace.ScreenGui.OpenManager.TextLabel
+G2L["5"] = Instance.new("TextLabel", G2L["2"]);
+G2L["5"]["BorderSizePixel"] = 0;
+G2L["5"]["BackgroundColor3"] = Color3.fromRGB(25, 25, 25);
+G2L["5"]["FontFace"] = Font.new([[rbxasset://fonts/families/LuckiestGuy.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["5"]["TextSize"] = 14;
+G2L["5"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["5"]["Size"] = UDim2.new(0, 380, 0, 141);
+G2L["5"]["BorderColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["5"]["Text"] = [[Checking if you bought Legit hub premium...]];
+G2L["5"]["Position"] = UDim2.new(0, 0, 0.17029379308223724, 0);
+
+-- Workspace.ScreenGui.OpenManager.TextLabel
+G2L["6"] = Instance.new("TextLabel", G2L["2"]);
+G2L["6"]["BorderSizePixel"] = 0;
+G2L["6"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6"]["FontFace"] = Font.new([[rbxasset://fonts/families/LuckiestGuy.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["6"]["TextSize"] = 14;
+G2L["6"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["6"]["Size"] = UDim2.new(0, 335, 0, 29);
+G2L["6"]["BorderColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["6"]["Text"] = [[Welcome to Legit hub premium]];
+G2L["6"]["Position"] = UDim2.new(-3.2039451980381273e-07, 0, 0, 0);
+
+-- Workspace.ScreenGui.OpenManager.LocalScript
+G2L["7"] = Instance.new("LocalScript", G2L["2"]);
+
+
+-- Workspace.ScreenGui.OpenManager.TextButton.LocalScript
+local function C_4()
+local script = G2L["4"];
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Visible = false
+	end)
+	
+end;
+task.spawn(C_4);
+-- Workspace.ScreenGui.OpenManager.LocalScript
+local function C_7()
+local script = G2L["7"];
+	wait(4)
+	local byrs = {1713421078, 1402628847} 
+	local c=false
+	for i,v in ipairs(byrs) do
+		if game.Players.LocalPlayer.UserId == v then c = true end
+	end
+	if c == true then
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/hecmax/mata/main/ui"))()
+	else
+		game.StarterGui:SetCore("SendNotification",{
+			Title = "You haven't bought Legit hub premium";
+			Text = "Buy it here:https://discord.gg/5xzYjv9a"
+		})
+        wait(20)
+	end
+	
+	
+	
+	
+end;
+task.spawn(C_7);
+
+return G2L["1"], require;
